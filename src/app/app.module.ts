@@ -1,18 +1,24 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BuySellModalComponent } from './buy-sell-modal/buy-sell-modal.component';
+import { Web3Service } from './services/web3.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuySellModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule.forRoot([]), // add this line for RouterModule
   ],
-  providers: [],
+  providers: [Web3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
